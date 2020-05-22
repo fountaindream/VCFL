@@ -28,8 +28,6 @@ year = {2019}
 
 # Installation
 
-**NOTE: This project now does NOT require installing, so if you has installed `aligned_reid` before, now you have to uninstall it by `pip uninstall aligned-reid`.**
-
 It's recommended that you create and enter a python virtual environment, if versions of the packages required here conflict with yours.
 
 I use Python 2.7 and Pytorch 0.3. For installing Pytorch, follow the [official guide](http://pytorch.org/). Other packages are specified in `requirements.txt`.
@@ -43,6 +41,12 @@ Our code is partly based on AlignedReID-Re-Production-Pytorch, you can clone the
 ```bash
 git clone https://github.com/huanghoujing/AlignedReID-Re-Production-Pytorch.git
 cd AlignedReID-Re-Production-Pytorch
+```
+
+Our code can clone the repository
+```bash
+git clone https://github.com/fountaindream/VCFL.git
+cd VCFL
 ```
 
 # Dataset Preparation
@@ -69,7 +73,7 @@ Transformed dataset has following features
 
 ## Market1501
 
-You can download what I have transformed for the project from [Google Drive](https://drive.google.com/open?id=1CaWH7_csm9aDyTVgjs7_3dlZIWqoBlv4) or [BaiduYun](https://pan.baidu.com/s/1nvOhpot). Otherwise, you can download the original dataset and transform it using my script, described below.
+You can download the project from [Google Drive](https://drive.google.com/open?id=1CaWH7_csm9aDyTVgjs7_3dlZIWqoBlv4) or [BaiduYun](https://pan.baidu.com/s/1nvOhpot). Otherwise, you can download the original dataset and transform it using my script, described below.
 
 Download the Market1501 dataset from [here](http://www.liangzheng.org/Project/project_reid.html). Run the following script to transform the dataset, replacing the paths with yours.
 
@@ -92,7 +96,7 @@ We follow the new training/testing protocol proposed in paper
 ```
 Details of the new protocol can be found [here](https://github.com/zhunzhong07/person-re-ranking).
 
-You can download what I have transformed for the project from [Google Drive](https://drive.google.com/open?id=1Ssp9r4g8UbGveX-9JvHmjpcesvw90xIF) or [BaiduYun](https://pan.baidu.com/s/1hsB0pIc). Otherwise, you can download the original dataset and transform it using my script, described below.
+You can download the project from [Google Drive](https://drive.google.com/open?id=1Ssp9r4g8UbGveX-9JvHmjpcesvw90xIF) or [BaiduYun](https://pan.baidu.com/s/1hsB0pIc). Otherwise, you can download the original dataset and transform it using my script, described below.
 
 Download the CUHK03 dataset from [here](http://www.ee.cuhk.edu.hk/~xgwang/CUHK_identification.html). Then download the training/testing partition file from [Google Drive](https://drive.google.com/open?id=14lEiUlQDdsoroo8XJvQ3nLZDIDeEizlP) or [BaiduYun](https://pan.baidu.com/s/1miuxl3q). This partition file specifies which images are in training, query or gallery set. Finally run the following script to transform the dataset, replacing the paths with yours.
 
@@ -105,7 +109,7 @@ python script/dataset/transform_cuhk03.py \
 
 ## DukeMTMC-reID
 
-You can download what I have transformed for the project from [Google Drive](https://drive.google.com/open?id=1P9Jr0en0HBu_cZ7txrb2ZA_dI36wzXbS) or [BaiduYun](https://pan.baidu.com/s/1miIdEek). Otherwise, you can download the original dataset and transform it using my script, described below.
+You can download from [Google Drive](https://drive.google.com/open?id=1P9Jr0en0HBu_cZ7txrb2ZA_dI36wzXbS) or [BaiduYun](https://pan.baidu.com/s/1miIdEek). Otherwise, you can download the original dataset and transform it using my script, described below.
 
 Download the DukeMTMC-reID dataset from [here](https://github.com/layumi/DukeMTMC-reID_evaluation). Run the following script to transform the dataset, replacing the paths with yours.
 
@@ -117,10 +121,10 @@ python script/dataset/transform_duke.py \
 
 ## Configure Dataset Path
 
-The project requires you to configure the dataset paths. In `aligned_reid/dataset/__init__.py`, modify the following snippet according to your saving paths used in preparing datasets.
+The project requires you to configure the dataset paths. In `basic_vcfl/dataset/__init__.py`, modify the following snippet according to your saving paths used in preparing datasets.
 
 ```python
-# In file aligned_reid/dataset/__init__.py
+# In file basic_vcfl/dataset/__init__.py
 
 ########################################
 # Specify Directory and Partition File #
@@ -151,7 +155,7 @@ elif name == 'combined':
 Datasets used in this project all follow the standard evaluation protocol of Market1501, using CMC and mAP metric. According to [open-reid](https://github.com/Cysu/open-reid), the setting of CMC is as follows
 
 ```python
-# In file aligned_reid/dataset/__init__.py
+# In file basic_vcfl/dataset/__init__.py
 
 cmc_kwargs = dict(separate_camera_set=False,
                   single_gallery_shot=False,
