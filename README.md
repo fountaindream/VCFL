@@ -3,7 +3,7 @@
 - [Strong Identification Loss Baseline](https://github.com/huanghoujing/beyond-part-models)
 - [AlignedReID: Surpassing Human-Level Performance in Person Re-Identification](https://arxiv.org/abs/1711.08184) using [pytorch](https://github.com/pytorch/pytorch).
 
-If you adopt AlignedReID in your research, please cite the paper
+If you adopt VCFL in your research, please cite the paper
 ```
 @InProceedings{Liu_2019_ICCV,
 author = {Liu, Fangyi and Zhang, Lei},
