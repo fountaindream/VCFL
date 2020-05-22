@@ -16,27 +16,27 @@ from tensorboardX import SummaryWriter
 import numpy as np
 import argparse
 
-from aligned_reid.dataset import create_dataset
-from aligned_reid.model.Model import Model
-from aligned_reid.model.TripletLoss import TripletLoss
-from aligned_reid.model.loss import global_loss
-from aligned_reid.model.loss import local_loss
-from aligned_reid.model.loss import normalize
+from basic_vcfl.dataset import create_dataset
+from basic_vcfl.model.Model import Model
+from basic_vcfl.model.TripletLoss import TripletLoss
+from basic_vcfl.model.loss import global_loss
+from basic_vcfl.model.loss import local_loss
+from basic_vcfl.model.loss import normalize
 
-from aligned_reid.utils.utils import time_str
-from aligned_reid.utils.utils import str2bool
-from aligned_reid.utils.utils import tight_float_str as tfs
-from aligned_reid.utils.utils import may_set_mode
-from aligned_reid.utils.utils import load_state_dict
-from aligned_reid.utils.utils import load_ckpt
-from aligned_reid.utils.utils import save_ckpt
-from aligned_reid.utils.utils import set_devices
-from aligned_reid.utils.utils import AverageMeter
-from aligned_reid.utils.utils import to_scalar
-from aligned_reid.utils.utils import ReDirectSTD
-from aligned_reid.utils.utils import set_seed
-from aligned_reid.utils.utils import adjust_lr_exp
-from aligned_reid.utils.utils import adjust_lr_staircase
+from basic_vcfl.utils.utils import time_str
+from basic_vcfl.utils.utils import str2bool
+from basic_vcfl.utils.utils import tight_float_str as tfs
+from basic_vcfl.utils.utils import may_set_mode
+from basic_vcfl.utils.utils import load_state_dict
+from basic_vcfl.utils.utils import load_ckpt
+from basic_vcfl.utils.utils import save_ckpt
+from basic_vcfl.utils.utils import set_devices
+from basic_vcfl.utils.utils import AverageMeter
+from basic_vcfl.utils.utils import to_scalar
+from basic_vcfl.utils.utils import ReDirectSTD
+from basic_vcfl.utils.utils import set_seed
+from basic_vcfl.utils.utils import adjust_lr_exp
+from basic_vcfl.utils.utils import adjust_lr_staircase
 
 
 class Config(object):
